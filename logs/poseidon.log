@@ -1,0 +1,18 @@
+2020-06-18 14:19:23,570 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.0.16.Final
+2020-06-18 14:19:33,429 INFO o.h.j.i.u.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-18 14:19:33,663 INFO o.h.Version [task-1] HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-06-18 14:19:34,452 INFO o.h.a.c.Version [task-1] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-18 14:19:35,861 INFO o.h.d.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-06-18 14:19:40,162 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-18 14:20:13,613 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.0.16.Final
+2020-06-18 14:20:24,580 INFO o.h.j.i.u.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-18 14:20:24,857 INFO o.h.Version [task-1] HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-06-18 14:20:25,571 INFO o.h.a.c.Version [task-1] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-18 14:20:27,515 INFO o.h.d.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-06-18 14:20:31,770 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-18 14:24:35,339 INFO UserController [http-nio-8080-exec-1] /user/list : OK
+2020-06-18 14:24:48,284 INFO UserController [http-nio-8080-exec-5] /user/delete : OK
+2020-06-18 14:24:48,378 INFO UserController [http-nio-8080-exec-6] /user/list : OK
+2020-06-18 14:24:51,799 INFO UserController [http-nio-8080-exec-10] GET /user/add : OK
+2020-06-18 14:25:07,474 INFO UserController [http-nio-8080-exec-7] POST /user/validate : OK
+2020-06-18 14:25:07,510 INFO UserController [http-nio-8080-exec-1] /user/list : OK
