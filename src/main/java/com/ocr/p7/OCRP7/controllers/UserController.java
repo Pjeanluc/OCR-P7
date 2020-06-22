@@ -9,7 +9,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -64,9 +63,9 @@ public class UserController {
     }
 
     @PostMapping("/user/update/{id}")
-    public String updateUser(@PathVariable("id") Integer id, @Valid User user, BindingResult result, Model model) {
+    public String updateUser(@PathVariable("id") Integer id, @Valid @ValidPassword User user, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            logger.info("POST /user/validate : KO");
+            logger.info("POST /user/update : KO");
             return "user/update";
         }
 
