@@ -1,6 +1,10 @@
 package com.ocr.p7.OCRP7.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
 import java.sql.Timestamp;
 
 @Entity
@@ -8,28 +12,49 @@ import java.sql.Timestamp;
 public class BidList {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(columnDefinition = "TINYINT")
     private Integer BidListId;
+    @NotBlank(message = "Account is mandatory")
+    @Size(max = 30)
     private String account;
+    @NotBlank(message = "Type is mandatory")
+    @Size(max = 30)
     private String type;
+    @Min(1)
     private Double bidQuantity;
     private Double askQuantity;
     private Double bid;
     private Double ask;
+    @Size(max=125)
     private String benchmark;
+   
     private Timestamp bidListDate;
+    @Size(max=125)
     private String commentary;
+    @Size(max=125)
     private String security;
+    @Size(max=10)
     private String status;
+    @Size(max=125)
     private String trader;
+    @Size(max=125)
     private String book;
+    @Size(max=125)
     private String creationName;
+    
     private Timestamp creationDate;
+    @Size(max=125)
     private String revisionName;
+    
     private Timestamp revisionDate;
+    @Size(max=125)
     private String dealName;
     private String dealType;
+    @Size(max=125)
     private String sourceListId;
+    @Size(max=125)
     private String side;
+    
     public Integer getBidListId() {
         return BidListId;
     }

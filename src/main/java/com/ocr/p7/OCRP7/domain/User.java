@@ -10,6 +10,7 @@ import com.ocr.p7.OCRP7.config.ValidPassword;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(columnDefinition = "TINYINT")
     private Integer id;
     @NotBlank(message = "Username is mandatory")
     private String username;

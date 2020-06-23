@@ -1,7 +1,6 @@
 package com.ocr.p7.OCRP7.controller;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -20,7 +19,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
@@ -28,10 +26,8 @@ import com.ocr.p7.OCRP7.domain.User;
 import com.ocr.p7.OCRP7.repositories.UserRepository;
 
 @SpringBootTest
-@WebAppConfiguration
 @RunWith(SpringRunner.class)
 @AutoConfigureMockMvc(addFilters = false)
-//@SpringBootTest(classes = { SpringSecurityTestConfiguration.class })
 public class UserTest {
 
     @Autowired
