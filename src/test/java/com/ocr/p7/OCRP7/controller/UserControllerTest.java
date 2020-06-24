@@ -28,7 +28,7 @@ import com.ocr.p7.OCRP7.repositories.UserRepository;
 @SpringBootTest
 @RunWith(SpringRunner.class)
 @AutoConfigureMockMvc(addFilters = false)
-public class UserTest {
+public class UserControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -36,6 +36,9 @@ public class UserTest {
     @MockBean
     private UserRepository userRepository;
 
+    /**
+     * Test controller to show user list
+     */
     @Test
     public void getAllUserControllerTest() throws Exception {
 
@@ -47,6 +50,9 @@ public class UserTest {
                 .andExpect(status().isOk());
     }
 
+    /**
+     * Test to validate a user
+     */
     @Test
     public void postValidateUserTest() throws Exception {
 
@@ -71,6 +77,9 @@ public class UserTest {
                 .andExpect(status().is3xxRedirection());
     }
 
+    /**
+     * Test to validate a user with an error (password)
+     */
     @Test
     public void postValidateUserWithErrorTest() throws Exception {
 
@@ -94,6 +103,10 @@ public class UserTest {
                 .andDo(print()).andExpect(status().isOk()).andExpect(view().name("user/add"));
     }
 
+    
+    /**
+     * Test to validate a user update
+     */
     @Test
     public void postUpdateUserTest() throws Exception {
 
@@ -118,6 +131,9 @@ public class UserTest {
                 .andExpect(status().is3xxRedirection());
     }
 
+    /**
+     * Test to validate a user update with an error (password)
+     */
     @Test
     public void postUpdateUserWithWrongParametersTest() throws Exception {
 
@@ -142,6 +158,9 @@ public class UserTest {
                 .andExpect(view().name("user/update"));
     }
 
+    /**
+     * Test to get the form to add a user
+     */
     @Test
     public void getUserAddTest() throws Exception {
 
@@ -153,6 +172,9 @@ public class UserTest {
                 .andExpect(status().isOk());
     }
 
+    /**
+     * Test to get the form to update a user
+     */
     @Test
     public void getUpdateUserTest() throws Exception {
 
@@ -173,6 +195,9 @@ public class UserTest {
                 .andExpect(status().isOk());
     }
 
+    /**
+     * Test to delete a user
+     */
     @Test
     public void getDeleteUserTest() throws Exception {
 
@@ -193,7 +218,10 @@ public class UserTest {
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.redirectedUrl("/user/list")).andExpect(status().is3xxRedirection());
     }
-
+    
+    /**
+     * Test to delete a user, with an id user not existing
+     */
     @Test
     public void getDeleteUserNoExistingTest() throws Exception {
 
