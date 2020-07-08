@@ -7,54 +7,75 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
 
-
 @Entity
 @Table(name = "curvepoint")
 public class CurvePoint {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     Integer curveId;
     private Timestamp asOfDate;
+    @NotNull(message = "term is mandatory")
     private Double term;
     private Double value;
     private Timestamp creationDate;
+
     public Integer getId() {
         return id;
     }
+
     public void setId(Integer id) {
         this.id = id;
     }
+
     public Integer getCurveId() {
         return curveId;
     }
+
     public void setCurveId(Integer curveId) {
         this.curveId = curveId;
     }
+
     public Timestamp getAsOfDate() {
-        return asOfDate;
+        Timestamp localTimestamp = asOfDate;
+        return localTimestamp;
     }
+
     public void setAsOfDate(Timestamp asOfDate) {
-        this.asOfDate = asOfDate;
+        if (asOfDate == null) {
+            this.asOfDate = null;
+        } else {
+            this.asOfDate = new Timestamp(asOfDate.getTime());
+        }
     }
+
     public Double getTerm() {
         return term;
     }
+
     public void setTerm(Double term) {
         this.term = term;
     }
+
     public Double getValue() {
         return value;
     }
+
     public void setValue(Double value) {
         this.value = value;
     }
+
     public Timestamp getCreationDate() {
-        return creationDate;
+        Timestamp localTimestamp = creationDate;
+        return localTimestamp;
     }
+
     public void setCreationDate(Timestamp creationDate) {
-        this.creationDate = creationDate;
+        if (creationDate == null) {
+            this.creationDate = null;
+        } else {
+            this.creationDate = new Timestamp(creationDate.getTime());
+        }
     }
-    
-    
+
 }
