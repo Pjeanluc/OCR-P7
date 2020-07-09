@@ -63,9 +63,9 @@ class BidListControllerTest {
         bidList.setType("typetest");
         bidList.setBidQuantity(100d);
 
-        Optional<BidList> userMock = Optional.of(bidList);
+        Optional<BidList> curveMock = Optional.of(bidList);
 
-        Mockito.when(bidListRepository.findById(any(Integer.class))).thenReturn(userMock);
+        Mockito.when(bidListRepository.findById(any(Integer.class))).thenReturn(curveMock);
 
         // WHEN
         // THEN
@@ -87,9 +87,9 @@ class BidListControllerTest {
         BidList bidList = new BidList();
         bidList.setAccount("accounttest");
         bidList.setBidQuantity(100d);
-        Optional<BidList> userMock = Optional.of(bidList);
+        Optional<BidList> bidListMock = Optional.of(bidList);
 
-        Mockito.when(bidListRepository.findById(any(Integer.class))).thenReturn(userMock);
+        Mockito.when(bidListRepository.findById(any(Integer.class))).thenReturn(bidListMock);
 
         // WHEN
         // THEN
@@ -113,9 +113,9 @@ class BidListControllerTest {
         bidList.setAccount("accounttest");
         bidList.setType("typetest");
         bidList.setBidQuantity(100d);
-        Optional<BidList> userMock = Optional.of(bidList);
+        Optional<BidList> bidListMock = Optional.of(bidList);
 
-        Mockito.when(bidListRepository.findById(any(Integer.class))).thenReturn(userMock);
+        Mockito.when(bidListRepository.findById(any(Integer.class))).thenReturn(bidListMock);
 
         // WHEN
         // THEN
@@ -138,9 +138,9 @@ class BidListControllerTest {
         BidList bidList = new BidList();
         bidList.setAccount("accounttest");
         bidList.setBidQuantity(100d);
-        Optional<BidList> userMock = Optional.of(bidList);
+        Optional<BidList> bidListMock = Optional.of(bidList);
 
-        Mockito.when(bidListRepository.findById(any(Integer.class))).thenReturn(userMock);
+        Mockito.when(bidListRepository.findById(any(Integer.class))).thenReturn(bidListMock);
 
         // WHEN
         // THEN
@@ -170,16 +170,16 @@ class BidListControllerTest {
      * Test to get the form to update a bidList
      */
     @Test
-    public void getUpdateUserTest() throws Exception {
+    public void getUpdateBidListTest() throws Exception {
 
         // GIVEN
         BidList bidList = new BidList();
         bidList.setAccount("accounttest");
         bidList.setType("typetest");
         bidList.setBidQuantity(100d);
-        Optional<BidList> userMock = Optional.of(bidList);
+        Optional<BidList> bidListMock = Optional.of(bidList);
 
-        Mockito.when(bidListRepository.findById(any(Integer.class))).thenReturn(userMock);
+        Mockito.when(bidListRepository.findById(any(Integer.class))).thenReturn(bidListMock);
 
         // WHEN
         // THEN
@@ -201,9 +201,9 @@ class BidListControllerTest {
         bidList.setAccount("accounttest");
         bidList.setType("typetest");
         bidList.setBidQuantity(100d);
-        Optional<BidList> userMock = Optional.of(bidList);
+        Optional<BidList> bidListMock = Optional.of(bidList);
 
-        Mockito.when(bidListRepository.findById(any(Integer.class))).thenReturn(userMock);
+        Mockito.when(bidListRepository.findById(any(Integer.class))).thenReturn(bidListMock);
 
         // WHEN
         // THEN

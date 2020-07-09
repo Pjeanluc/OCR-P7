@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.ocr.p7.OCRP7.domain.BidList;
 import com.ocr.p7.OCRP7.domain.CurvePoint;
 import com.ocr.p7.OCRP7.repositories.CurvePointRepository;
 
@@ -37,7 +36,7 @@ public class CurveController {
      * Endpoint to show the list of CurvePoint
      * 
      * @param model
-     * @return the bidList list
+     * @return the curvePoint list
      */
     @RequestMapping("/curvePoint/list")
     public String home(Model model) {
@@ -49,11 +48,11 @@ public class CurveController {
     /**
      * Endpoint to display curvePoint adding form
      * 
-     * @param bid the curvePoint to be added
+     * @param curvePoint the curvePoint to be added
      * @return
      */
     @GetMapping("/curvePoint/add")
-    public String addBidForm(CurvePoint bid) {
+    public String addcurvePointForm(CurvePoint curvePoint) {
         logger.info("GET /curvePoint/add : OK");
         return "curvePoint/add";
     }
@@ -61,7 +60,7 @@ public class CurveController {
     /**
      * Endpoint to validate the info of curve
      * 
-     * @param bidlist, curvePoint to be added
+     * @param curvePoint, curvePoint to be added
      * @param result   technical result
      * @param model    public interface model, model can be accessed and attributes
      *                 can be added
@@ -103,18 +102,18 @@ public class CurveController {
      * Endpoint to validate the curvePoint updating form
      * 
      * @param id
-     * @param bidlist the curvePoint id
+     * @param curvePoint the curvePoint id
      * @param result  technical result
      * @param model   public interface model, model can be accessed and attributes
      *                can be added
      * @return curvePoint/list if ok or curvePoint/update if ko
      */
     @PostMapping("/curvePoint/update/{id}")
-    public String updateBid(@PathVariable("id") Integer id, @Valid CurvePoint curvePoint, BindingResult result,
+    public String updateCurvePoint(@PathVariable("id") Integer id, @Valid CurvePoint curvePoint, BindingResult result,
             Model model) {
         if (result.hasErrors()) {
             logger.info("POST /curvePoint/update : KO");
-            return "bidList/update";
+            return "curvePoint/update";
         }
         curvePoint.setCurveId(id);
         curvePointRepository.save(curvePoint);
@@ -132,10 +131,9 @@ public class CurveController {
      * @return curvePoint/list if ok
      */
     @GetMapping("/curvePoint/delete/{id}")
-    public String deleteBid(@PathVariable("id") Integer id, Model model) {
-        // TODO: Find Curve by Id and delete the Curve, return to Curve list
+    public String deletecurvePoint(@PathVariable("id") Integer id, Model model) {
         CurvePoint curvePoint = curvePointRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Invalid bidList Id:" + id));
+                .orElseThrow(() -> new IllegalArgumentException("Invalid curvePoint Id:" + id));
         curvePointRepository.delete(curvePoint);
         model.addAttribute("curvePoints", curvePointRepository.findAll());
         logger.info("/curvePoint/delete : OK");
