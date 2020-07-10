@@ -146,8 +146,9 @@ class BidListControllerTest {
         // THEN
         this.mockMvc
                 .perform(post("/bidList/update/1").contentType(MediaType.APPLICATION_JSON)
-                        .accept(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON).param("account", bidList.getAccount())
-                        .param("type", bidList.getType()).param("bidquantity", bidList.getBidQuantity().toString()))
+                        .accept(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON)
+                        .param("account", bidList.getAccount()).param("type", bidList.getType())
+                        .param("bidquantity", bidList.getBidQuantity().toString()))
                 .andExpect(MockMvcResultMatchers.redirectedUrl(null)).andExpect(status().isOk())
                 .andExpect(view().name("bidList/update"));
     }
@@ -165,7 +166,7 @@ class BidListControllerTest {
                 .perform(get("/bidList/add").contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
-    
+
     /**
      * Test to get the form to update a bidList
      */
@@ -188,7 +189,6 @@ class BidListControllerTest {
                 .andExpect(status().isOk());
     }
 
-
     /**
      * Test to delete a bidList
      */
@@ -196,7 +196,7 @@ class BidListControllerTest {
     public void getDeleteBidListTest() throws Exception {
 
         // GIVEN
-     // GIVEN
+        // GIVEN
         BidList bidList = new BidList();
         bidList.setAccount("accounttest");
         bidList.setType("typetest");
@@ -212,7 +212,6 @@ class BidListControllerTest {
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.redirectedUrl("/bidList/list")).andExpect(status().is3xxRedirection());
     }
-    
 
     /**
      * Test to delete a bidList, with an id bidList not existing
@@ -229,8 +228,8 @@ class BidListControllerTest {
         // WHEN
         // THEN
         try {
-            this.mockMvc.perform(
-                    get("/bidList/delete/1").contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON));
+            this.mockMvc.perform(get("/bidList/delete/1").contentType(MediaType.APPLICATION_JSON)
+                    .accept(MediaType.APPLICATION_JSON));
         } catch (Exception e) {
             assertThat(e).hasMessageContaining("Invalid bidList Id:1");
         }

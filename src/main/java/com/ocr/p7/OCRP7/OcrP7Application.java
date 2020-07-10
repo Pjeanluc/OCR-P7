@@ -9,8 +9,8 @@ import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties
 @EnableEncryptableProperties
 public class OcrP7Application {
 
-	public static void main(String[] args) {
-		SpringApplication.run(OcrP7Application.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(OcrP7Application.class, args);
+    }
 
 }

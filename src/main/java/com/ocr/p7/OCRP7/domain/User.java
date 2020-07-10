@@ -13,12 +13,13 @@ public class User {
     @Column(columnDefinition = "TINYINT")
     private Integer id;
     @NotBlank(message = "Username is mandatory")
+    @Column(length = 125)
     private String username;
     @NotBlank(message = "Password is mandatory")
-    //@Pattern(regexp = "\\A(?=\\S*?[0-9])(?=\\S*?[a-z])(?=\\S*?[A-Z])(?=\\S*?[@#$%^_&+=])\\S{8,}\\z", message = "Incorrect format password")
     @ValidPassword
     private String password;
     @NotBlank(message = "FullName is mandatory")
+    @Column(length = 125)
     private String fullname;
     @NotBlank(message = "Role is mandatory")
     private String role;

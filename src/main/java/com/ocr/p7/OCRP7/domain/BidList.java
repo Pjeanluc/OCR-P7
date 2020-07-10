@@ -41,11 +41,9 @@ public class BidList {
     private String book;
     @Size(max = 125)
     private String creationName;
-
     private Timestamp creationDate;
     @Size(max = 125)
     private String revisionName;
-
     private Timestamp revisionDate;
     @Size(max = 125)
     private String dealName;
@@ -202,11 +200,16 @@ public class BidList {
     }
 
     public Timestamp getRevisionDate() {
-        return revisionDate;
+        Timestamp localTimestamp = revisionDate;
+        return localTimestamp;
     }
 
     public void setRevisionDate(Timestamp revisionDate) {
-        this.revisionDate = revisionDate;
+        if (revisionDate == null) {
+            this.revisionDate = null;
+        } else {
+            this.revisionDate = new Timestamp(revisionDate.getTime());
+        }        
     }
 
     public String getDealName() {
