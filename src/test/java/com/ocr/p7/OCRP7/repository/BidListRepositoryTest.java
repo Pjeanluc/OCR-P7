@@ -27,11 +27,36 @@ class BidListRepositoryTest {
         bid.setAccount("Account Test");
         bid.setType("Type Test");
         bid.setBidQuantity(10d);
+        bid.setAsk(11d);
+        bid.setAskQuantity(12d);
+        bid.setBenchmark("benchmark");
+        bid.setBook("book");
+        bid.setCommentary("commentary");
+        bid.setDealName("dealName");
+        bid.setDealType("dealType");
+        bid.setRevisionName("revisionName");
+        bid.setSecurity("security");
+        bid.setSide("side");
+        bid.setSourceListId("sourceListId");
+        bid.setStatus("status");
 
         // Save
         bid = bidListRepository.save(bid);
         Assert.assertNotNull(bid.getBidListId());
+        Assert.assertEquals(bid.getAccount(),"Account Test","Account Test");
         Assert.assertEquals(bid.getBidQuantity(), 10d, 10d);
+        Assert.assertEquals(bid.getAsk(),11d,11d);
+        Assert.assertEquals(bid.getAskQuantity(),12d,12d);
+        Assert.assertEquals(bid.getBenchmark(),"benchmark","benchmark");
+        Assert.assertEquals(bid.getBook(),"book","book");
+        Assert.assertEquals(bid.getCommentary(),"commentary","commentary");
+        Assert.assertEquals(bid.getDealName(),"dealName","dealName");
+        Assert.assertEquals(bid.getDealType(),"dealType","dealType");
+        Assert.assertEquals(bid.getRevisionName(),"revisionName","revisionName");
+        Assert.assertEquals(bid.getSecurity(),"security","security");
+        Assert.assertEquals(bid.getSide(),"side","side");
+        Assert.assertEquals(bid.getSourceListId(),"sourceListId","sourceListId");
+        Assert.assertEquals(bid.getStatus(),"status","status");
 
         // Update
         bid.setBidQuantity(20d);

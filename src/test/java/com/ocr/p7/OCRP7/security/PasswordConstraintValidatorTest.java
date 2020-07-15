@@ -15,7 +15,7 @@ class PasswordConstraintValidatorTest {
         @Test
         void isValid_shouldReturnTrue() {
             assertTrue(isValid("Password1@"));
-            
+
         }
     }
 
@@ -23,7 +23,7 @@ class PasswordConstraintValidatorTest {
     class PasswordNotValidFlow {
         @Test
         void isNotValid_shouldReturnFalse_() {
-            assertFalse(isValid("password "));
+            assertFalse(isValid("password"));
             assertFalse(isValid("Password"));
             assertFalse(isValid("Password1"));
             assertFalse(isValid("Pp1@"));

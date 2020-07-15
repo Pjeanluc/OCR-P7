@@ -1,7 +1,10 @@
 package com.ocr.p7.OCRP7.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
 import java.sql.Timestamp;
 
 @Entity
@@ -11,8 +14,13 @@ public class Trade {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer tradeId;
+    @Size(max = 30)
+    @NotBlank(message = "account is mandatory")
     private String account;
+    @Size(max = 30)
+    @NotBlank(message = "type is mandatory")
     private String type;
+    @Min(1)
     private Double buyQuantity;
     private Double sellQuantity;
     private Double buyPrice;
@@ -80,10 +88,15 @@ public class Trade {
         this.benchmark = benchmark;
     }
     public Timestamp getTradeDate() {
-        return tradeDate;
+        Timestamp localTimestamp = tradeDate;
+        return localTimestamp;
     }
     public void setTradeDate(Timestamp tradeDate) {
-        this.tradeDate = tradeDate;
+        if (tradeDate == null) {
+            this.tradeDate = null;
+        } else {
+            this.tradeDate = new Timestamp(tradeDate.getTime());
+        }
     }
     public String getSecurity() {
         return security;
@@ -116,10 +129,15 @@ public class Trade {
         this.creationName = creationName;
     }
     public Timestamp getCreationDate() {
-        return creationDate;
+        Timestamp localTimestamp = creationDate;
+        return localTimestamp;
     }
     public void setCreationDate(Timestamp creationDate) {
-        this.creationDate = creationDate;
+        if (creationDate == null) {
+            this.creationDate = null;
+        } else {
+            this.creationDate = new Timestamp(creationDate.getTime());
+        }
     }
     public String getRevisionName() {
         return revisionName;
@@ -128,10 +146,15 @@ public class Trade {
         this.revisionName = revisionName;
     }
     public Timestamp getRevisionDate() {
-        return revisionDate;
+        Timestamp localTimestamp = revisionDate;
+        return localTimestamp;
     }
     public void setRevisionDate(Timestamp revisionDate) {
-        this.revisionDate = revisionDate;
+        if (revisionDate == null) {
+            this.revisionDate = null;
+        } else {
+            this.revisionDate = new Timestamp(revisionDate.getTime());
+        }
     }
     public String getDealName() {
         return dealName;
