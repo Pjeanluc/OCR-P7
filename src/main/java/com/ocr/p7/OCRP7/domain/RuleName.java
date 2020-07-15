@@ -2,7 +2,6 @@ package com.ocr.p7.OCRP7.domain;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import java.sql.Timestamp;
 
 @Entity
 @Table(name = "rulename")
@@ -11,16 +10,22 @@ public class RuleName {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
     @NotBlank(message = "Name is mandatory")
+    @Column(length = 125)
     private String name;
     @NotBlank(message = "Description is mandatory")
+    @Column(length = 125)
     private String description;
     @NotBlank(message = "json is mandatory")
+    @Column(length = 125)
     private String json;
     @NotBlank(message = "Template is mandatory")
+    @Column(length = 512)
     private String template;
     @NotBlank(message = "sqlStr is mandatory")
+    @Column(length = 255)
     private String sqlStr;
     @NotBlank(message = "sqlPart is mandatory")
+    @Column(length = 255)
     private String sqlPart;
     public Integer getId() {
         return id;

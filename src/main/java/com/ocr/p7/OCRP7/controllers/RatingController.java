@@ -1,7 +1,5 @@
 package com.ocr.p7.OCRP7.controllers;
 
-import java.sql.Timestamp;
-
 import javax.validation.Valid;
 
 import org.apache.logging.log4j.LogManager;

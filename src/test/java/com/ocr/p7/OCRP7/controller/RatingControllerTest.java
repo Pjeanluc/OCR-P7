@@ -37,7 +37,7 @@ class RatingControllerTest {
     private RatingRepository ratingRepository;
 
     /**
-     * the to show the list of curve
+     * the to show the list of rating
      */
     @Test
     public void getAllRatingListControllerTest() throws Exception {
@@ -63,9 +63,9 @@ class RatingControllerTest {
         rating.setSandPRating("CC");
         rating.setOrderNumber(1);
 
-        Optional<Rating> curveMock = Optional.of(rating);
+        Optional<Rating> ratingMock = Optional.of(rating);
 
-        Mockito.when(ratingRepository.findById(any(Integer.class))).thenReturn(curveMock);
+        Mockito.when(ratingRepository.findById(any(Integer.class))).thenReturn(ratingMock);
 
         // WHEN
         // THEN
@@ -89,9 +89,9 @@ class RatingControllerTest {
         rating.setSandPRating("CC");
         rating.setOrderNumber(1);
        
-        Optional<Rating> curveMock = Optional.of(rating);
+        Optional<Rating> ratingMock = Optional.of(rating);
 
-        Mockito.when(ratingRepository.findById(any(Integer.class))).thenReturn(curveMock);
+        Mockito.when(ratingRepository.findById(any(Integer.class))).thenReturn(ratingMock);
 
         // WHEN
         // THEN
@@ -118,9 +118,9 @@ class RatingControllerTest {
         rating.setSandPRating("CC");
         rating.setOrderNumber(1);
 
-        Optional<Rating> curveMock = Optional.of(rating);
+        Optional<Rating> ratingMock = Optional.of(rating);
 
-        Mockito.when(ratingRepository.findById(any(Integer.class))).thenReturn(curveMock);
+        Mockito.when(ratingRepository.findById(any(Integer.class))).thenReturn(ratingMock);
 
         // WHEN
         // THEN
@@ -146,9 +146,9 @@ class RatingControllerTest {
         rating.setSandPRating("CC");
         rating.setOrderNumber(1);
        
-        Optional<Rating> curveMock = Optional.of(rating);
+        Optional<Rating> ratingMock = Optional.of(rating);
 
-        Mockito.when(ratingRepository.findById(any(Integer.class))).thenReturn(curveMock);
+        Mockito.when(ratingRepository.findById(any(Integer.class))).thenReturn(ratingMock);
 
         // WHEN
         // THEN
@@ -189,9 +189,9 @@ class RatingControllerTest {
         rating.setSandPRating("CC");
         rating.setOrderNumber(1);
        
-        Optional<Rating> curveMock = Optional.of(rating);
+        Optional<Rating> ratingMock = Optional.of(rating);
 
-        Mockito.when(ratingRepository.findById(any(Integer.class))).thenReturn(curveMock);
+        Mockito.when(ratingRepository.findById(any(Integer.class))).thenReturn(ratingMock);
 
         // WHEN
         // THEN
@@ -214,9 +214,9 @@ class RatingControllerTest {
         rating.setSandPRating("CC");
         rating.setOrderNumber(1);
        
-        Optional<Rating> curveMock = Optional.of(rating);
+        Optional<Rating> ratingMock = Optional.of(rating);
 
-        Mockito.when(ratingRepository.findById(any(Integer.class))).thenReturn(curveMock);
+        Mockito.when(ratingRepository.findById(any(Integer.class))).thenReturn(ratingMock);
 
 
         // WHEN
