@@ -20,6 +20,7 @@ What things you need to install the software and how to install them
 
 - Java 1.8
 - Maven 3.6.2
+- Thymeleaf
 - Mysql 8.0.17 : need to create a MySQL database "demo" on localhost.
 
 ## Installing
@@ -32,6 +33,9 @@ Create a variable system JASYPT_ENCRYPTOR_PASSWORD that contains the private key
 mvn clean install
 mvn clean verify (generate tests and test report)
 mvn site (generate reportings)
+
+or to launch the application with Maven :
+mvn spring-boot:run (run the application)
 
 ## Documentation
 Read the JavaDoc
